@@ -371,6 +371,216 @@ input[type="checkbox"] {
 .muted em {
   float: right;
 }
+
+/* ---------- 多轨混音器 ---------- */
+.audio-panel {
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+.audio-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.audio-panel::-webkit-scrollbar-thumb {
+  background: #34303e;
+  border-radius: 3px;
+}
+.loop-btn {
+  border: 0;
+  background: transparent;
+  padding: 6px 4px;
+  font-size: 9px;
+  color: #8c8d9d;
+}
+.loop-btn.selected {
+  color: #d4c8ff;
+}
+.timeline-ruler {
+  position: relative;
+  height: 18px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.timeline-ruler .playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #d6c6fb;
+  box-shadow: 0 0 6px #b6a2e980;
+  pointer-events: none;
+}
+.audition-banner {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  margin-bottom: 12px;
+  border: 1px solid #4b3d63;
+  border-radius: 6px;
+  background: #242033;
+  color: #cfc2ee;
+}
+.audition-banner svg {
+  color: #c2a9f4;
+  flex: none;
+}
+.audition-banner strong {
+  font: 10px "Space Grotesk";
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.audition-banner small {
+  margin-top: 3px;
+  font-size: 8px;
+  line-height: 1.4;
+}
+.audition-banner .mini {
+  margin-left: auto;
+  flex: none;
+}
+.empty-hint {
+  padding: 12px 2px;
+}
+.track-card {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #181922;
+  padding: 11px;
+  margin-bottom: 11px;
+  transition:
+    opacity 0.15s,
+    border-color 0.15s;
+}
+.track-card.dimmed {
+  opacity: 0.45;
+}
+.track-card.soloed {
+  border-color: #6f5e9d;
+}
+.track-card.auditioning {
+  border-color: #8f79c9;
+  box-shadow: 0 0 0 1px #8f79c955;
+}
+.track-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.track-head .album {
+  width: 31px;
+  height: 31px;
+  font-size: 17px;
+  flex: none;
+}
+.track-meta {
+  min-width: 0;
+  flex: 1;
+}
+.track-meta strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 10px "Space Grotesk";
+}
+.track-meta small {
+  margin-top: 3px;
+  font-size: 8px;
+  letter-spacing: 0.3px;
+}
+.ms-buttons {
+  display: flex;
+  gap: 4px;
+  flex: none;
+}
+button.mini {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: 9px;
+  display: grid;
+  place-items: center;
+}
+button.mini.selected {
+  background: #4a3d68;
+  border-color: #8f79c9;
+  color: #efe8ff;
+}
+button.mini.danger-btn {
+  color: #ffb6c4;
+}
+.track-card .control {
+  margin-top: 11px;
+}
+.fade-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.clip-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+}
+.drag-grip {
+  color: #5b5c6b;
+  flex: none;
+}
+.clip-strip {
+  position: relative;
+  flex: 1;
+  height: 26px;
+  background: #111219;
+  border: 1px solid #26272f;
+  border-radius: 4px;
+}
+.clip {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  min-width: 8px;
+  background: linear-gradient(135deg, #5a4680, #33264d);
+  border: 1px solid #7c66b0;
+  border-radius: 3px;
+  cursor: grab;
+  touch-action: none;
+  overflow: hidden;
+}
+.clip:active {
+  cursor: grabbing;
+}
+.clip .fade-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #0d0e15aa;
+  pointer-events: none;
+}
+.clip .fade-zone.in {
+  left: 0;
+}
+.clip .fade-zone.out {
+  right: 0;
+}
+.offset-label {
+  display: block;
+  margin-top: 5px;
+  text-align: right;
+}
+.memory-line {
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+.memory-line b {
+  float: right;
+  color: #9c93b8;
+  font-weight: 400;
+}
 .scene-panel {
   padding-bottom: 20px;
 }

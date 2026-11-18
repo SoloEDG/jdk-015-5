@@ -15,6 +15,27 @@ export interface Analysis {
   beat: boolean;
   time: number;
 }
+export interface TrackState {
+  id: string;
+  name: string;
+  duration: number;
+  sampleRate: number;
+  channels: number;
+  /** 解码后 PCM 占用字节数，用于内存预算 */
+  size: number;
+  volume: number;
+  muted: boolean;
+  solo: boolean;
+  /** 轨道在时间线上的起点（秒） */
+  offset: number;
+  fadeIn: number;
+  fadeOut: number;
+}
+export interface AuditionState {
+  active: boolean;
+  trackId: string;
+  position: number;
+}
 export interface StageDocument {
   scenes: Scene[];
   activeId: string;
